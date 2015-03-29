@@ -1,0 +1,49 @@
+set nocompatible    " disable compatibility with original vi
+
+
+set formatoptions=l " don't break in the middle of a paragraph
+set lbr             " word wrap visually
+
+"set nowrap          " disable word wrap
+set nobackup        " disable ~ backup files
+set number          " turn on line numbers
+set updatecount=0   " disable swap
+
+set expandtab       " expand tabs into spaces
+set shiftwidth=4    " a tab character is 4 spaces
+set tabstop=4       " a tab character is 4 spaces
+
+retab               " auto re-tab
+
+set ai              " auto-indent
+
+set guioptions=mTrb " gvim: menus, toolbar, right and bottom scrollbars
+
+"set columns=116     " 110 columns wide
+"set lines=42        " 35 lines tall
+
+syn on              " syntax highlighting
+
+" syntax types in menu
+" let do_syntax_sel_menu = 1|runtime! synmenu.vim|aunmenu &Syntax.&Show\ filetypes\ in\ menu
+
+" no hitting shift to make the colon for commands
+map ; :
+" semicolon twice to get the semicolon
+noremap ;; ;
+
+" firefox-like tab shortcuts
+:nmap <C-S-tab> :tabprevious<cr>
+:nmap <C-tab> :tabnext<cr>
+:map <C-S-tab> :tabprevious<cr>
+:map <C-tab> :tabnext<cr>
+:imap <C-S-tab> <ESC>:tabprevious<cr>i
+:imap <C-tab> <ESC>:tabnext<cr>i
+:nmap <C-t> :tabnew<cr>
+:imap <C-t> <ESC>:tabnew<cr>
+
+" au BufWinLeave *.js mkview
+" au BufWinEnter *.js silent loadview
+
+colorscheme darkblue
+set gfn=Consolas:h10
